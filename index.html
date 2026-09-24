@@ -3,112 +3,144 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ammar Mousa | My Links</title>
+<title>Ammar Mousa | Connect With Me</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
 body{
-    font-family:Arial,sans-serif;
-    min-height:100vh;
-    background:linear-gradient(135deg,#050505,#101827,#050505);
-    color:white;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:25px;
+  min-height:100vh;
+  font-family:Arial,Helvetica,sans-serif;
+  background:
+    radial-gradient(circle at 50% 35%,#07356b 0%,#031225 22%,#02050b 55%,#000 100%);
+  color:white;
+  padding:35px 18px;
+  overflow-x:hidden;
+}
+
+body:before{
+  content:"";
+  position:fixed;
+  width:420px;
+  height:420px;
+  background:#008cff;
+  filter:blur(180px);
+  opacity:.13;
+  top:20%;
+  left:50%;
+  transform:translateX(-50%);
+  pointer-events:none;
 }
 
 .container{
-    width:100%;
-    max-width:430px;
-    text-align:center;
+  width:100%;
+  max-width:650px;
+  margin:auto;
+  text-align:center;
+  position:relative;
+  z-index:2;
 }
 
-.profile{
-    width:105px;
-    height:105px;
-    border-radius:50%;
-    margin:auto;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:linear-gradient(135deg,#1683ff,#00d4ff);
-    font-size:38px;
-    font-weight:bold;
-    box-shadow:0 0 35px #1683ff88;
+.logo{
+  font-size:55px;
+  font-weight:300;
+  font-style:italic;
+  letter-spacing:-3px;
+  color:white;
+  text-shadow:0 0 20px #008cff;
 }
 
-h1{
-    margin-top:18px;
-    font-size:30px;
-    letter-spacing:2px;
+.logo span{
+  color:#159cff;
 }
 
 .subtitle{
-    color:#9da9bb;
-    margin:8px 0 25px;
-    font-size:14px;
+  margin-top:10px;
+  font-size:14px;
+  letter-spacing:6px;
+  color:#dcecff;
+}
+
+.tagline{
+  margin-top:14px;
+  color:#8ea8c5;
+  letter-spacing:4px;
+  font-size:11px;
+}
+
+.qr-box{
+  margin:35px auto 32px;
+  width:320px;
+  max-width:90vw;
+  padding:20px;
+  border:2px solid #159cff;
+  border-radius:32px;
+  background:rgba(0,10,25,.65);
+  box-shadow:
+    0 0 15px #008cff,
+    0 0 45px rgba(0,140,255,.35),
+    inset 0 0 30px rgba(0,140,255,.08);
+}
+
+.qr-box img{
+  width:100%;
+  display:block;
+  border-radius:18px;
 }
 
 .links{
-    display:flex;
-    flex-direction:column;
-    gap:14px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
 }
 
-a{
-    text-decoration:none;
-    color:white;
+.link{
+  display:flex;
+  align-items:center;
+  text-decoration:none;
+  color:white;
+  padding:16px;
+  border-radius:18px;
+  border:1px solid rgba(0,153,255,.55);
+  background:rgba(2,12,25,.72);
+  box-shadow:0 0 15px rgba(0,140,255,.08);
+  transition:.25s;
 }
 
-.card{
-    display:flex;
-    align-items:center;
-    padding:16px 20px;
-    border:1px solid #ffffff18;
-    border-radius:18px;
-    background:#ffffff0d;
-    backdrop-filter:blur(12px);
-    transition:.25s;
-}
-
-.card:hover{
-    transform:translateY(-3px);
-    border-color:#1683ff;
-    box-shadow:0 8px 30px #1683ff22;
+.link:hover{
+  transform:translateY(-4px);
+  border-color:#20aaff;
+  box-shadow:
+    0 0 18px rgba(0,153,255,.5),
+    0 10px 30px rgba(0,0,0,.4);
 }
 
 .icon{
-    width:45px;
-    height:45px;
-    border-radius:13px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:24px;
-    margin-right:15px;
-}
-
-.text{
-    text-align:left;
-    flex:1;
+  width:45px;
+  height:45px;
+  border-radius:13px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:23px;
+  font-weight:bold;
+  margin-right:12px;
 }
 
 .name{
-    font-size:17px;
-    font-weight:bold;
-}
-
-.desc{
-    color:#9da9bb;
-    font-size:12px;
-    margin-top:4px;
+  text-align:left;
+  flex:1;
+  font-weight:bold;
+  font-size:15px;
 }
 
 .arrow{
-    color:#7c8ba1;
-    font-size:20px;
+  color:#8ccfff;
+  font-size:25px;
 }
 
 .whatsapp{background:#25D366;}
@@ -118,11 +150,30 @@ a{
 .youtube{background:#FF0000;}
 
 .footer{
-    margin-top:25px;
-    color:#64748b;
-    font-size:12px;
+  margin-top:35px;
+  color:#6d87a5;
+  font-size:11px;
+  letter-spacing:3px;
 }
 
+@media(max-width:500px){
+  .logo{
+    font-size:42px;
+  }
+
+  .subtitle{
+    font-size:11px;
+    letter-spacing:4px;
+  }
+
+  .links{
+    grid-template-columns:1fr;
+  }
+
+  .qr-box{
+    width:285px;
+  }
+}
 </style>
 </head>
 
@@ -130,71 +181,57 @@ a{
 
 <div class="container">
 
-<div class="profile">AM</div>
+  <div class="logo">Ammar <span>Mousa</span></div>
 
-<h1>AMMAR MOUSA</h1>
-<div class="subtitle">Connect with me</div>
+  <div class="subtitle">CONNECT WITH ME</div>
 
-<div class="links">
+  <div class="tagline">
+    SAME PERSON • DIFFERENT PLATFORMS
+  </div>
 
-<a href="https://wa.me/201115482971" target="_blank">
-<div class="card">
-<div class="icon whatsapp">☏</div>
-<div class="text">
-<div class="name">WhatsApp</div>
-<div class="desc">Chat with me</div>
-</div>
-<div class="arrow">›</div>
-</div>
-</a>
+  <div class="qr-box">
+    <img
+      src="https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=https%3A%2F%2F3mmarmousa2003-collab.github.io%2Fammar-links%2F"
+      alt="Ammar Mousa QR Code">
+  </div>
 
-<a href="https://www.instagram.com/3mmarmousa?stkn=MXM0eGkzZnJvaW1taQ%3D%3D&utm_source=qr" target="_blank">
-<div class="card">
-<div class="icon instagram">◎</div>
-<div class="text">
-<div class="name">Instagram</div>
-<div class="desc">Follow me</div>
-</div>
-<div class="arrow">›</div>
-</div>
-</a>
+  <div class="links">
 
-<a href="https://www.linkedin.com/in/ammar-mousa-6747a833a" target="_blank">
-<div class="card">
-<div class="icon linkedin">in</div>
-<div class="text">
-<div class="name">LinkedIn</div>
-<div class="desc">Let's connect</div>
-</div>
-<div class="arrow">›</div>
-</div>
-</a>
+    <a class="link" href="https://wa.me/201115482971" target="_blank">
+      <div class="icon whatsapp">☏</div>
+      <div class="name">WhatsApp</div>
+      <div class="arrow">›</div>
+    </a>
 
-<a href="https://www.facebook.com/share/1BquVUu6Ee/?mibextid=wwXIfr" target="_blank">
-<div class="card">
-<div class="icon facebook">f</div>
-<div class="text">
-<div class="name">Facebook</div>
-<div class="desc">Follow me</div>
-</div>
-<div class="arrow">›</div>
-</div>
-</a>
+    <a class="link" href="https://www.instagram.com/3mmarmousa" target="_blank">
+      <div class="icon instagram">◎</div>
+      <div class="name">Instagram</div>
+      <div class="arrow">›</div>
+    </a>
 
-<a href="https://www.youtube.com/@ovitechgya" target="_blank">
-<div class="card">
-<div class="icon youtube">▶</div>
-<div class="text">
-<div class="name">YouTube</div>
-<div class="desc">Watch my channel</div>
-</div>
-<div class="arrow">›</div>
-</div>
-</a>
+    <a class="link" href="https://www.linkedin.com/in/ammar-mousa-6747a833a" target="_blank">
+      <div class="icon linkedin">in</div>
+      <div class="name">LinkedIn</div>
+      <div class="arrow">›</div>
+    </a>
 
-</div>
+    <a class="link" href="https://www.facebook.com/share/1BquVUu6Ee/" target="_blank">
+      <div class="icon facebook">f</div>
+      <div class="name">Facebook</div>
+      <div class="arrow">›</div>
+    </a>
 
-<div class="footer">© 2026 Ammar Mousa</div>
+    <a class="link" href="https://www.youtube.com/@ovitechgya" target="_blank">
+      <div class="icon youtube">▶</div>
+      <div class="name">YouTube</div>
+      <div class="arrow">›</div>
+    </a>
+
+  </div>
+
+  <div class="footer">
+    THANKS FOR BEING HERE ♥
+  </div>
 
 </div>
 
